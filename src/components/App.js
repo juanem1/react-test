@@ -1,10 +1,11 @@
-import React, {PropTypes} from 'React';
+import React, {PropTypes} from 'react';
+import Header from './partials/Header';
 
 class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <p>Header</p>
+        <Header />
         {this.props.children}
       </div>
     );
