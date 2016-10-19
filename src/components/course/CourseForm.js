@@ -5,11 +5,10 @@ import SelectInput from '../partials/SelectInput';
 const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => {
   return (
     <form>
-      <h1>Manage Course</h1>
       <TextInput name="title" label="title" value={course.title} onChange={onChange} />
-      <SelectInput name="authorId" label="Author" value={course.authorId} defautOption="Select Author" options={allAuthors} onChange={onChange} />
+      <SelectInput name="authorId" label="Author" value={course.authorId} defautOption="Select Author" options={allAuthors} onChange={onChange} error={errors.authorId} />
       <TextInput name="category" label="Category" value={course.category} onChange={onChange} />
-      <TextInput name="lenght" label="Lenght" value={course.lenght} onChange={onChange} />
+      <TextInput name="length" label="Lenght" value={course.length} onChange={onChange} />
       <button type="submit" className="btn btn-primary" disable={loading} onClick={onSave}>{loading ? 'Saving...' : 'Save'}</button>
     </form>
   );
